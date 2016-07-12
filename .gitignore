@@ -1,2 +1,5 @@
 img/*
-css/*
+bower_components/*
+css/b*
+css/f*
+css/node_modules/*
