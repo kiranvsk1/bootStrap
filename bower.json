@@ -1,0 +1,21 @@
+{
+  "name": "conFusion",
+  "homepage": "https://github.com/kiranvsk1/bootStrap",
+  "description": "confusion coursera bootstrap course by jogesh",
+  "main": "index.html",
+  "authors": [
+    "Shiva"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.3"
+  }
+}
