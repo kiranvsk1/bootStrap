@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/mystyle.css">
     <link rel="stylesheet" href="css/bootstrap-social.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" id='BNS-Corner-Logo-Style-css' href="css/social_icons_from_Techandallcom.css" type='text/css' media='screen'>
 </head>
 
@@ -56,8 +57,103 @@
     </nav>
 
 
-    <div class="modal fade" id="loginModal" role="dialog" aria-labelledby="myModalLabel">
+    <!--Modal for Reserve table button -->
+    <!-- Modal -->
+    <div class="modal fade" id="reserveTable" tabindex="-1" role="dialog" aria-labelledby="reserveModalLabel">
         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="reserveModalLabel">Reserve Table</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+
+                        <!--Form radio buttons -->
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label col-xs-3">Number of Guests</label>
+                            <div class="col-xs-10 col-sm-10">
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">1
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">4
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5"> 5
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6"> 6
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-2 ">
+                                <label class="control-label">Section</label>
+                            </div>
+                            <div class=" col-sm-10">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-success active">
+                                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Non-Smoking
+                                    </label>
+                                    <label class="btn btn-danger">
+                                        <input type="radio" name="options" id="option2" autocomplete="off"> Smoking
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Date and Time -->
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label control-label">Date and Time</label>
+                            <!-- <div class="col-sm-1"></div> -->
+                            <div class="col-sm-4">
+                                <input type="text" id="selectDate" class="form-control" placeholder="Date" />
+                                <i class="glyphicon glyphicon-calendar form-control-feedback"></i>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" placeholder="Time" />
+                                <i class="glyphicon glyphicon-time form-control-feedback"></i>
+                            </div>
+                        </div>
+
+                        <!--Form Buttons -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" class="btn btn-primary">Reserve</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
+
+                        </div>
+
+                        <!--Form Dismissable Warning Alert -->
+                        <div class="form-group">
+                            <div class="alert alert-warning alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <strong>Warning!</strong> Please <a href="#" class="alert-link">call</a> us to reserve more than six guests.
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bs-example-modal-sm" id="loginModal" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -78,8 +174,6 @@
                                 <input type="checkbox" style="font-size: 5px !important;"><span>Remember Me</span>
                             </label>
                         </div>
-
-
                     </form>
 
                 </div>
@@ -108,7 +202,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-2">
                     <p style="padding:45px;"></p>
-                    <a class="btn btn-warning" data-toggle="tooltip" data-placement="bottom" title="Or Call us at +91 8019619290" href="#reservetable" role="button">Reserve a Table</a>
+                    <a class="btn btn-warning" data-toggle="modal" data-target="#reserveTable" role="button">Reserve a Table</a>
                 </div>
             </div>
         </div>
@@ -133,25 +227,25 @@
                         <div class="item active">
                             <img src="/home/shiva/Pictures/135644.jpg" alt="sharingan">
                             <div class="carousel-caption">
-                              <p>
-                                <strong>Mangekyo Sharingan</strong>
-                              </p>
+                                <p>
+                                    <strong>Mangekyo Sharingan</strong>
+                                </p>
                             </div>
                         </div>
                         <div class="item">
                             <img src="/home/shiva/Pictures/686121.jpg" alt="naruto">
                             <div class="carousel-caption">
-                              <p>
-                                <strong>Naruto Uzumaki</strong>
-                              </p>
+                                <p>
+                                    <strong>Naruto Uzumaki</strong>
+                                </p>
                             </div>
                         </div>
                         <div class="item">
                             <img src="/home/shiva/Pictures/676429.jpg" alt="Madara">
                             <div class="carousel-caption">
-                              <p>
-                                <strong>Madara Uchiha</strong>
-                              </p>
+                                <p>
+                                    <strong>Madara Uchiha</strong>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -168,6 +262,7 @@
                 </div>
             </div>
         </div>
+
         <div class="row row-content">
             <div class="col-xs-12 col-sm-3 col-sm-push-9">
                 <p style="padding:20px;"></p>
@@ -226,6 +321,7 @@
                 </div>
             </div>
         </div>
+        <!--
         <div class="row row-content">
             <a name="reservetable"></a>
             <div class="col-xs-12 col-sm-3">
@@ -260,8 +356,8 @@
                                 <input type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6"> 6
                             </label>
                         </div>
-
                     </div>
+
                     <div class="form-group has-feedback">
                         <label class="col-sm-2 control-label control-label">Date and Time</label>
                         <div class="col-sm-1"></div>
@@ -296,6 +392,8 @@
                 </form>
             </div>
         </div>
+-->
+
     </div>
 
 
@@ -353,7 +451,12 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
+    <script>
+        $(function() {
+            $("#selectDate").datepicker();
+        });
     </script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
 </body>
 
